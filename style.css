@@ -1455,5 +1455,201 @@ body, html {
     .center-panel, .password-panel-outer {
         transition: all 0.3s ease-in-out;
     }
+    
+    /* TELEFON İÇİN ÖZEL DÜZELTMELER */
+    .center-panel {
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        z-index: 1000 !important;
+        width: 95vw !important;
+        max-width: 450px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .main-title-panel {
+        width: 95vw !important;
+        max-width: 420px !important;
+        height: auto !important;
+        min-height: 350px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        position: relative !important;
+    }
+    
+    .main-title-svg {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 400px !important;
+        z-index: 1001 !important;
+    }
+    
+    .inside-panel {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        z-index: 1002 !important;
+        width: 85% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+    }
+    
+    .panel-desc {
+        font-size: 1rem !important;
+        text-align: center !important;
+        color: #ffffff !important;
+        z-index: 1003 !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .main-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+        z-index: 1003 !important;
+    }
+    
+    .main-btn-svg, .start-svg {
+        width: 90% !important;
+        max-width: 300px !important;
+        height: auto !important;
+        min-height: 50px !important;
+        cursor: pointer !important;
+        z-index: 1004 !important;
+        display: block !important;
+    }
+    
+    .start-svg {
+        margin-top: 15px !important;
+        width: 80% !important;
+        max-width: 250px !important;
+    }
+    
+    /* Logo ve Scoreboard için */
+    .logo {
+        position: fixed !important;
+        top: 20px !important;
+        left: 20px !important;
+        width: 80px !important;
+        z-index: 2000 !important;
+    }
+    
+    .scoreboard {
+        position: fixed !important;
+        right: 20px !important;
+        bottom: 20px !important;
+        z-index: 2000 !important;
+    }
+    
+    .scoreboard-img {
+        width: 150px !important;
+        height: auto !important;
+    }
 }
+
+/* Çok küçük telefon ekranları için */
+@media (max-width: 480px) {
+    .center-panel {
+        width: 98vw !important;
+        max-width: 350px !important;
+    }
+    
+    .main-title-panel {
+        width: 98vw !important;
+        max-width: 320px !important;
+        min-height: 300px !important;
+    }
+    
+    .inside-panel {
+        width: 90% !important;
+        gap: 12px !important;
+    }
+    
+    .panel-desc {
+        font-size: 0.9rem !important;
+    }
+    
+    .main-btn-svg, .start-svg {
+        width: 95% !important;
+        max-width: 250px !important;
+    }
+    
+    .logo {
+        width: 60px !important;
+        top: 15px !important;
+        left: 15px !important;
+    }
+    
+    .scoreboard-img {
+        width: 120px !important;
+    }
+}
+
+/* Mobil cihaz sınıfları için özel kurallar */
+.mobile-device {
+    -webkit-overflow-scrolling: touch;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.mobile-device .center-panel {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 9999 !important;
+    width: 95vw !important;
+    max-width: 400px !important;
+}
+
+.mobile-device .main-title-panel {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 350px !important;
+}
+
+.mobile-device .background-img {
+    z-index: 1 !important;
+}
+
+.mobile-device .background {
+    z-index: 0 !important;
+}
+
+/* iOS özel düzeltmeleri */
+.ios-device {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+.ios-device .center-panel {
+    -webkit-transform: translate3d(-50%, -50%, 0) !important;
+    transform: translate3d(-50%, -50%, 0) !important;
+}
+
+/* Touch hedefleri için minimum boyut */
+.mobile-device .main-btn-svg,
+.mobile-device .start-svg {
+    min-height: 50px !important;
+    padding: 5px !important;
+    box-sizing: border-box !important;
+}
+
+/* Mobilde panel overflow'unu engelle */
+.mobile-device .password-panel-outer {
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+
 
