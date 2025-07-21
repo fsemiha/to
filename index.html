@@ -2,8 +2,13 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siber Macera</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0a1428">
+    <meta name="description" content="Siber güvenlik konularını öğreten eğitici oyun">
+    <title>Siber Macera - Teknofest Oyunu</title>
     <!-- Font preload for faster loading -->
     <link rel="preload" href="fonts/Gilmer Regular.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="fonts/Gilmer Light.otf" as="font" type="font/otf" crossorigin>
@@ -14,6 +19,41 @@
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js" defer></script>
+    
+    <!-- Mobil optimizasyon script'i -->
+    <script>
+        // Mobil cihaz tespiti ve optimizasyonu
+        document.addEventListener('DOMContentLoaded', function() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                document.body.classList.add('mobile-device');
+                
+                // iOS Safari için viewport hack
+                if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                    document.body.classList.add('ios-device');
+                    
+                    // iOS Safari'de viewport sorununu çöz
+                    function fixViewport() {
+                        const viewport = document.querySelector('meta[name=viewport]');
+                        if (viewport) {
+                            viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover';
+                        }
+                    }
+                    
+                    window.addEventListener('orientationchange', function() {
+                        setTimeout(fixViewport, 100);
+                    });
+                    
+                    fixViewport();
+                }
+                
+                // Touch event optimizasyonu
+                document.addEventListener('touchstart', function() {}, { passive: true });
+                document.addEventListener('touchmove', function() {}, { passive: true });
+            }
+        });
+    </script>
   </head>
   <body>
       <!-- Yükleme Ekranı -->
